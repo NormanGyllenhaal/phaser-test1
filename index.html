@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/phaser.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var game = new Phaser.Game(300, 400, Phaser.AUTO, "container", state);
+    function state() {
+        this.init = function () {
+            game.scale.pageAlignHorizontally = true;
+            game.scale.pageAlignVertically = true;
+
+        };
+        var jiqimao;
+        this.preload = function () {
+            game.load.image('bg', "assets/bg.jpg");
+            game.load.image("jiqimao","assets/jiqimao.png");
+        };
+        this.create = function () {
+            game.world.setBounds(0, 0, 2000, 600);
+            game.add.image(0, 0, 'bg');
+            jiqimao = game.add.image(200,300,"jiqimao");
+            jiqimao.anchor.set(0.5,0.5);
+
+            game.input.onDown.add(function () {
+                game.camera.focusOn(jiqimao);
+            });
+            game.camera.follow(jiqimao);
+        };
+        this.update = function () {
+            var keys = game.input.keyboard.createCursorKeys();
+            if (keys.right.isDown) jiqimao.x += 1;
+            else if (keys.left.isDown) jiqimao.x -= 1;
+            else if (keys.down.isDown) jiqimao.y += 1;
+            else if (keys.up.isDown) jiqimao.y -= 1;
+
+            //jiqimao.x += 1;
+        };
+        this.render = function () {
+
+        };
+    }
+    game.state.add("state", state);
+    game.state.start("state");
+</script>
+</body>
+</html>
