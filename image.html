@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>图片</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+</style>
+<script src="../js/phaser-2.4.1.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+
+/*var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+function state(game){
+	this.preload = function(){
+		game.load.image('cat', 'assets/cat.png');
+	}
+	this.create = function(){
+		game.add.image(100, 100, 'cat');
+	}
+}*/
+
+
+var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+function state(game){
+
+	this.preload = function(){
+		game.load.spritesheet('sprite', 'assets/sprite.png', 150, 162);
+	}
+
+	this.create = function(){
+		game.add.image(0, 0, 'sprite', 0);
+		game.add.image(200, 50, 'sprite', 1);
+		game.add.image(0, 200, 'sprite', 2);
+		game.add.image(200, 250, 'sprite', 3);
+	}
+}
+
+
+	
+
+
+</script>
+</body>
+</html>

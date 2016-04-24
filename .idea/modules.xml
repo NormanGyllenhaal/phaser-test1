@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/WebstormProjects/phaser-test1/.idea/phaser-test.iml" filepath="$USER_HOME$/WebstormProjects/phaser-test1/.idea/phaser-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/phaser-test.iml" filepath="$PROJECT_DIR$/.idea/phaser-test.iml" />
     </modules>
   </component>
 </project>

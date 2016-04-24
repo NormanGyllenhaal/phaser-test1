@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>spritesheet animation</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+</style>
+<script src="js/phaser.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var game = new Phaser.Game(300, 630, Phaser.AUTO, 'container', state);
+
+function state(){
+	this.init = function(){
+		game.stage.setBackgroundColor(0xffffff);
+	}
+	this.preload = function(){
+		game.load.atlasXML('man', 'asset/atlas/sprites.png', 'asset/atlas/sprites.xml');
+	}
+
+	this.create = function(){
+		var man = game.add.sprite(0, 0, 'man');
+		man.animations.add('tidy', ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png']);
+		man.play('tidy', 10, true);
+	}
+}
+
+</script>
+</body>
+</html>

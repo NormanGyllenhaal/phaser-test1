@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>spritesheet animation</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+</style>
+<script src="js/phaser-2.4.2.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var game = new Phaser.Game(300, 630, Phaser.AUTO, 'container', state);
+
+function state(){
+	this.init = function(){
+		game.stage.setBackgroundColor(0xffffff);
+	}
+	this.preload = function(){
+		game.load.spritesheet('man', 'asset/man.png', 136, 152);
+	}
+
+	this.create = function(){
+		var man = game.add.sprite(0, 0, 'man');
+		man.animations.add('stand', [123,124,125, 126,127,128,129,130,131,132, 133,134,135,136,137,138,139, 140,141,142,143,144]);
+		man.animations.add('fall', [0,1,2,3,4,5,6,7]);
+		man.animations.add('wall', [82,83, 84,85,86,87,88,89]);
+		man.animations.add('tidy', [42,43,44,45,46,47,48, 49,50]);
+		man.animations.add('die', [68,69, 70,71,72,73]);
+		man.animations.add('jump', [95,94,93,92,91, 90]);
+		man.animations.add('run', [96,97, 98,99,100,101,102,103,104, 105,106,107,108,109,110,111, 112,113,114,115,116,117,118, 119,120,121,122]);
+		man.animations.add('sad', [26,27, 28,29,30,31,32,33]);
+
+		man.animations.play('sad', 10, true);
+
+	}
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>webFont</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+#active{ font-family: 'jin_mei_mxplzx398592'; height:0; width: 0; overflow: hidden;}
+@font-face {
+font-family: 'jin_mei_mxplzx398592';
+src: url('font/jin_mei_mxplzx.eot');
+src: url('font/jin_mei_mxplzx.eot?#iefix') format('embedded-opentype'),
+     url('font/jin_mei_mxplzx.woff') format('woff'),
+     url('font/jin_mei_mxplzx.ttf') format('truetype'),
+     url('font/jin_mei_mxplzx.svg#jin_mei_mxplzx') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+</style>
+<script src="js/phaser-2.4.2.js"></script>
+</head>
+<body>
+<div id="active">激活自定义字体，这里只做演示使用</div>
+<div id="container"></div>
+<script>
+var game = new Phaser.Game(300, 630, Phaser.AUTO, 'container', state);
+
+function state(){
+
+	this.create = function(){
+		setTimeout(function(){
+			var text = game.add.text(150, 315, '黄河远上白云间，\n一片孤城万仞山。\n羌笛何须怨杨柳，\n春风不度玉门关。');
+			text.fill = '#fff';
+			text.anchor.set(0.5, 0.5);
+			text.font = 'jin_mei_mxplzx398592';
+		}, 1000);	
+	}
+}
+
+
+
+</script>
+</body>
+</html>

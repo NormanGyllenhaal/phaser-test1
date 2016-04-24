@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>图形</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+</style>
+<script src="../js/phaser-2.4.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+
+	var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+	function state(game){
+
+		this.create = function(){
+			
+			/*var graphics = game.add.graphics(0, 0);
+
+			graphics.beginFill(0xFF0000);
+			graphics.drawRect(0, 0, 100, 100);
+			graphics.drawCircle(180, 100, 100);
+			graphics.drawEllipse(150, 220, 100, 50);
+			graphics.arc(100, 300, 50, 0, Math.PI);
+			graphics.beginFill(0x0000FF);
+			graphics.drawPolygon(50,380, 200,380, 250,430, 180,480, 20,450);
+			graphics.endFill();*/
+
+
+
+			/*var graphics = game.add.graphics(0, 0);
+
+			graphics.lineStyle(5, 0xFF0000);
+			graphics.drawRect(0, 0, 100, 100);
+			graphics.drawCircle(180, 100, 100);
+			graphics.drawEllipse(150, 220, 100, 50);
+			graphics.arc(100, 300, 50, 0, Math.PI);
+			graphics.lineStyle(5, 0x0000FF);
+			graphics.drawPolygon(50,380, 200,380, 250,430, 180,480, 20,450);*/
+
+
+			/*var graphics = game.add.graphics(0, 0);
+			//设置描边宽度和颜色
+			graphics.lineStyle(3, 0x00FF00);
+			//绘制直线
+			graphics.moveTo(50, 50);
+			graphics.lineTo(300, 100);
+			//绘制折线
+			graphics.moveTo(50, 200);
+			graphics.lineTo(200, 250);
+			graphics.lineTo(100, 300);
+			graphics.lineTo(200, 350);*/
+
+
+			/*var graphics = game.add.graphics(0, 0);
+			//设置描边宽度和颜色
+			graphics.lineStyle(3, 0x00FF00);
+			//Phaser中可用的是二次贝塞尔曲线
+			graphics.moveTo(50, 50);
+			graphics.bezierCurveTo(250,50, 350,350, 50,400);
+			bezierCurveTo(cpX, cpY, cpX2, cpY2, toX, toY);*/
+
+
+			/*var graphics = game.add.graphics(0, 0);
+			graphics.lineStyle(3, 0x00FF00);
+			graphics.moveTo(50, 50);
+			graphics.lineTo(300, 100);
+			graphics.moveTo(50, 200);
+			graphics.lineTo(200, 250);
+			graphics.lineTo(100, 300);
+			graphics.lineTo(200, 350);
+
+			graphics.clear();*/
+
+
+		}
+	}
+
+
+	
+
+</script>
+</body>
+</html>

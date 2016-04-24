@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>精灵</title>
+<style>
+html,body{ height:100%; margin: 0; padding: 0;}
+#container{ height:100%; width: 300px; margin: 0 auto;}
+</style>
+<script src="../js/phaser-2.4.1.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+
+	/*var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+	
+	function state(game){
+		this.preload = function(){
+			game.load.image('cat', 'assets/cat.png');
+		}
+		this.create = function(){
+
+			var cat1 = game.add.sprite(200, 250, 'cat');
+			cat1.anchor.set(1, 1);
+
+			var cat2 = game.add.sprite(200, 250, 'cat');
+			cat2.anchor.set(0.5, 0.5);
+
+			var cat3 = game.add.sprite(200, 250, 'cat');
+			cat3.anchor.set(0, 0);
+
+		}
+		
+	}*/
+
+
+
+
+
+
+
+	/*var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+	function state(game){
+
+		this.preload = function(){
+			game.load.image('cat', 'assets/cat.png');
+		}
+
+		this.create = function(){
+
+
+
+			var cat1 = game.add.sprite(100, 50, 'cat');
+			
+			var cat2 = game.add.sprite(100, 200, 'cat');
+			cat2.width = 50;
+			cat2.height = 50;
+
+			var cat3 = game.add.sprite(100, 300, 'cat');
+			cat3.width = 100;
+			cat3.height = 200;
+		
+
+
+		}
+		
+	}*/
+
+
+	/*var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+	function state(game){
+
+		this.preload = function(){
+			game.load.image('cat', 'assets/cat.png');
+		}
+
+		this.create = function(){
+
+
+
+			var sprite = game.add.sprite(200, 200, 'cat');
+			
+			sprite.alpha = 0.5; //透明度,0为完全透明,1为完全不透明
+
+			sprite.angle = 90; //旋转角度,单位为度
+
+			sprite.scale.x = 2; //水平方向缩放,大于1为放大，小于1为缩小
+			sprite.scale.y = 2; //垂直方向缩放,大于1为放大，小于1为缩小
+
+			sprite.visible = true; //是否可见，true为可见，false不可见
+
+			//是否需要处理该元素,为false时会在游戏的每一帧中
+			//都跳过对该元素的处理，且会把该元素设为不可见
+			//合理的运行这个属性可以提高游戏性能
+			sprite.exists = true;	
+
+
+		}
+		
+	}*/
+
+
+
+
+	/*var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+	function state(game){
+
+		this.preload = function(){
+			game.load.image('cat', 'assets/cat.png');
+		}
+
+		this.create = function(){
+
+
+
+			var cat1 = game.add.sprite(100, 50, 'cat');
+			
+			var cat2 = game.add.sprite(100, 200, 'cat');
+			cat2.tint = 0x0000FF; //蓝色	
+
+			var cat3 = game.add.sprite(100, 350, 'cat');
+			cat3.tint = 0x00FF00; //绿色 
+		
+
+
+		}
+		
+	}*/
+
+
+
+	var game = new Phaser.Game(400, 500, Phaser.AUTO, 'container', state);
+
+	function state(game){
+
+		this.preload = function(){
+			game.load.image('bg', 'assets/bg.jpg');
+		}
+
+		this.create = function(){
+			var bg = game.add.image(0, 0, 'bg'); //背景图
+			var graphics = game.add.graphics(0, 0);
+			graphics.beginFill(0xFFFFFF);//必须要填充一个颜色
+			var circle = graphics.drawCircle(150, 250, 200);//画一个圆
+			bg.mask = circle; //把圆作为遮罩
+		}
+		
+	}
+
+
+	
+
+</script>
+</body>
+</html>
